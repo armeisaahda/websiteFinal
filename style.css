@@ -1,0 +1,23 @@
+.jumbotron{
+    background-image: url('image/bgDaftar.jpg');
+    background-size: cover;
+    height: 770px;
+    text-align: center;
+    margin-top: -350px;
+}
+
+.jumbotron .display-4{
+    color: white;
+    margin-top: 400px;
+
+}
+
+.jumbotron p.lead,
+.jumbotron p {
+    color: white;
+}
+
+h1{
+    text-align: center;
+    }
+
