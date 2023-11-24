@@ -8,8 +8,6 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style.css">
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
   <title>Armeisa - Daftar</title>
 </head>
 
@@ -58,16 +56,10 @@
     <br><br>
     <form id="registrationForm" method="post" action="upload.php" enctype="multipart/form-data">
 
-      <!--input nim-->
-      <div class="mb-3">
-        <label class="form-label">NIM</label>
-        <input type="text" class="form-control" id="nama" name="nama">
-      </div>
-
       <!--input nama-->
       <div class="mb-3">
-        <label class="form-label" for="namamhs">Nama</label>
-        <input type="text" class="form-control" id="namamhs" name="namamhs">
+        <label class="form-label">Nama</label>
+        <input type="text" class="form-control" id="inputNama" name="nama">
       </div>
 
       <!--input email-->
@@ -101,7 +93,7 @@
       <!--input ipk-->
       <div class="mb-3">
         <label class="form-label">IPK</label>
-        <input type="number" class="form-control" id="inputipk" name="inputipk" step="0.01" readonly>
+        <input type="number" class="form-control" id="inputipk" name="ipk" step="0.01" inputmode="decimal">
       </div>
 
       <!--input pilih beasiswa-->
@@ -124,7 +116,7 @@
 
       <!--button-->
       <br>
-      <button type="submit" name="submit" id="submit" class="btn btn-primary" disabled>Daftar</button>
+      <button type="submit" name="submit" id="submit" class="btn btn-primary"disabled>Daftar</button>
       <button type="reset" class="btn btn-danger">Batal</button>
       <br>
     </form>
@@ -137,7 +129,7 @@
     crossorigin="anonymous"></script>
 </body>
 
-<!-- <script>
+<script>
   document.addEventListener('DOMContentLoaded', function () {
     // Menangkap elemen-elemen yang akan diubah statusnya
     var ipkInput = document.getElementById('inputipk');
@@ -146,14 +138,14 @@
     var submitButton = document.getElementById('submit');
 
     // Menonaktifkan button "Daftar"
-    submitButton.disabled = true;
+    submitButton.disabled =true;
 
     // Mendengarkan perubahan pada input IPK
     ipkInput.addEventListener('change', function () {
       // Mendapatkan nilai IPK
       var ipkValue = parseFloat(ipkInput.value);
 
-      // Menonaktifkan atau mengaktifkan elemen berdasarkan kondisi
+      // Nonaktifkan atau aktifkan elemen berdasarkan kondisi
       if (ipkValue < 3) {
         beasiswaSelect.disabled = true;
         berkasInput.disabled = true;
@@ -165,32 +157,6 @@
       }
     });
   });
-</script> -->
-
-<script>
-  let output = document.querySelector(".inputipk");
-  let button = document.querySelector(".submit");
-  let berkas = document.querySelector(".berkas");
-  let beasiswa = document.querySelector(".beasiswa");
-
-  button.disabled = true;
-  berkas.disabled = true;
-  beasiswa.disabled = true;//setting button state to disabled/
-  output.addEventListener("change", stateHandle);
-
-  function stateHandle() {
-    if (document.querySelector(".inputipk").value < 3) {
-      button.disabled = true;
-      berkas.disabled = true;
-      beasiswa.disabled = true; //button remains disabled
-
-    } else {
-      button.disabled = false;
-      berkas.disabled = false;
-      beasiswa.disabled = false; //button is enabled
-    }
-  }
 </script>
-
 
 </html>
